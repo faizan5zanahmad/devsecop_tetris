@@ -5,7 +5,7 @@ pipeline {
 
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/faizan5zanahmad/devsecop_tetris.git'
+                 git branch: 'main', url: 'https://github.com/faizan5zanahmad/devsecop_tetris.git'
             }
         }
 
