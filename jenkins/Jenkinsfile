@@ -3,27 +3,15 @@ pipeline {
 
     stages {
 
-        stage('Checkout Code') {
+        stage('Build Docker Image') {
             steps {
-                git 'https://github.com/faizan5zanahmad/devsecop_tetris.git'
+                sh 'docker build -t tetris docker/'
             }
         }
 
-        stage('Build') {
+        stage('List Docker Images') {
             steps {
-                echo "Building project..."
-            }
-        }
-
-        stage('Test') {
-            steps {
-                echo "Running tests..."
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo "Deploy stage"
+                sh 'docker images'
             }
         }
 
